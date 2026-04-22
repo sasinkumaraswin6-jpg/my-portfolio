@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Pro Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg,#020617,#0f172a);
+      color:#fff;
+    }
+
+    header {
+      padding:20px;
+      text-align:center;
+      font-size:28px;
+      font-weight:700;
+      background:rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    nav {
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      margin-top:10px;
+    }
+
+    nav a {
+      color:#38bdf8;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    nav a:hover { color:#fff; }
+
+    section {
+      padding:60px 20px;
+      text-align:center;
+    }
+
+    h2 {
+      font-size:32px;
+      margin-bottom:20px;
+    }
+
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      max-width:1100px;
+      margin:auto;
+    }
+
+    .card {
+      background:#1e293b;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.5);
+      transition:0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+    }
+
+    .card img, .card iframe {
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .hero {
+      height:90vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    }
+
+    .hero h1 {
+      font-size:48px;
+    }
+
+    .hero p {
+      margin-top:10px;
+      color:#94a3b8;
+    }
+
+    .btn {
+      margin-top:20px;
+      padding:12px 20px;
+      border:none;
+      border-radius:10px;
+      background:#38bdf8;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    form {
+      max-width:500px;
+      margin:auto;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    input, textarea {
+      padding:10px;
+      border-radius:8px;
+      border:none;
+    }
+
+    footer {
+      text-align:center;
+      padding:20px;
+      background:#020617;
+      margin-top:40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Miller Editing
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#photos">Photos</a>
+    <a href="#videos">Videos</a>
+    <a href="#gaming">Gaming</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h1>Photo • Video • Gaming</h1>
+  <p>Create. Edit. Play.</p>
+  <button class="btn" onclick="scrollToSection('contact')">Hire Me</button>
+</section>
+
+<section id="photos">
+  <h2>Photography</h2>
+  <div class="gallery">
+    <div class="card"><img src="https://cdn.dribbble.com/userupload/39781413/file/original-b3f6ed93bd15f1ad709df18fedabd26a.jpg?format=webp&resize=400x300&vertical=center"></div>
+    <div class="card"><img src="https://beckymichaudphotography.com/wp-content/uploads/2017/02/067A2821.jpg"></div>
+  </div>
+</section>
+
+<section id="videos">
+  <h2>Video Editing</h2>
+  <div class="gallery">
+    <div class="card">
+      <iframe src="https://www.tiktok.com/embed/v2/ZS98khhhd" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="gaming">
+  <h2>Gaming Content</h2>
+  <div class="gallery">
+    <div class="card">
+      <iframe src="https://www.tiktok.com/embed/v2/ZS98hEmXC" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form onsubmit="sendMessage(event)">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="5" placeholder="Your Message" required></textarea>
+    <button class="btn">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 My Brand | Follow me on YouTube & Instagram
+</footer>
+
+<script>
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function sendMessage(e) {
+    e.preventDefault();
+    alert('Message sent! (Connect this to backend later)');
+  }
+</script>
+
+</body>
+</html>
